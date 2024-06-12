@@ -40,7 +40,7 @@ class CredBox extends StatelessWidget {
                     qStyle: QStyles.input,
                     onPressed: () async {
                       Uri uri = Uri.parse(
-                          'https://github.com/DanHartas/Smart-CV-Full/');
+                          'https://github.com/DanHartas/smart-cv-pub/');
                       if (await canLaunchUrl(uri)) {
                         await launchUrl(uri);
                       } else {
