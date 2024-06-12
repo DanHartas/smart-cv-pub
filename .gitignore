@@ -1,0 +1,23 @@
+
+/frontend/windows
+/Smart CV.code-workspace
+/frontend/frontend.iml
+/frontend/README.md
+/frontend/pubspec.lock
+/frontend/devtools_options.yaml
+/frontend/analysis_options.yaml
+/frontend/.metadata
+/frontend/.flutter-plugins-dependencies
+/frontend/.flutter-plugins
+/frontend/macos
+/frontend/linux
+/frontend/ios
+/frontend/assets
+/frontend/android
+/frontend/.idea
+/frontend/.dart_tool
+/backend/assets
+/backend/__pycache__
+/backend/venv
+/.vscode
+/backend/node_modules
