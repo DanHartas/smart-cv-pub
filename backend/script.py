@@ -3,14 +3,12 @@ from fastapi.responses import JSONResponse
 from fastapi.staticfiles import StaticFiles
 from fastapi.middleware.cors import CORSMiddleware
 from openai import OpenAI
+from copy import deepcopy
 from apscheduler.schedulers.background import BackgroundScheduler
 import json
 import uvicorn
 import uuid
 import datetime
-import pythonmonkey
-
-jsonrepair = pythonmonkey.require('jsonrepair').jsonrepair
 
 with open("./assets/secrets.json", "r", encoding="utf-8") as file: 
     secrets = json.load(file)
@@ -62,7 +60,7 @@ def update_assistant(data):
         secrets = json.load(file)
     assistant = secrets["assistant_id"]
 
-    payload = data.copy()
+    payload = deepcopy(data)
 
     payload["contact"]["email"] = "email"
     payload["contact"]["phone"] = "phone"
@@ -123,7 +121,7 @@ async def send_message(request: Request):
             assistant_id=secrets["assistant_id"],
         )
 
-        response = jsonrepair(client.beta.threads.messages.list(thread_id=sessions[session_id]["thread"]).data[0].content[0].text.value)
+        response = client.beta.threads.messages.list(thread_id=sessions[session_id]["thread"]).data[0].content[0].text.value
 
         return JSONResponse(status_code=200, content=json.loads(response))
 

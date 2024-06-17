@@ -42,7 +42,8 @@ class CVState extends State<CV> {
   }
 
   Future<void> fetchData() async {
-    final response = await http.get(Uri.parse('http://localhost:8000'));
+    final response = await http.get(
+        Uri.parse('https://dh-smart-cv-backend-fa1514ad8fd4.herokuapp.com'));
 
     if (response.statusCode == 200) {
       String body = utf8.decode(response.bodyBytes);

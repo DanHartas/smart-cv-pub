@@ -16,6 +16,7 @@ dependencies:
   web_socket_channel: ^3.0.0
   file_picker: ^8.0.3
   uuid: ^4.4.0
+  pdfx: ^2.6.0
 
 dev_dependencies:
   flutter_test:
@@ -26,3 +27,4 @@ flutter:
   uses-material-design: true
   assets:
     - assets/bg.jpg
+    - assets/feed-the-database.pdf

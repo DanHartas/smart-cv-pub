@@ -48,7 +48,8 @@ class ChatBotState extends State<ChatBot> {
 
   Future<void> _respond() async {
     final message = _controller.text;
-    var uri = Uri.parse('http://localhost:8000/sendMessage');
+    var uri = Uri.parse(
+        'https://dh-smart-cv-backend-fa1514ad8fd4.herokuapp.com/sendMessage');
 
     setState(() {
       messages.add(UserMessage(text: message, width: widget.width * 2 / 3));

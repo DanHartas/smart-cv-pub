@@ -21,3 +21,4 @@
 /backend/venv
 /.vscode
 /backend/node_modules
+/deploy
