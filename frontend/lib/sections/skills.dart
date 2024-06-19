@@ -58,7 +58,7 @@ class SkillsState extends State<Skills> {
                           },
                           text: data['skill'],
                           icon: Icons.expand_more_rounded,
-                          textStyle: TextStyles.qButtonMid,
+                          textStyle: TextStyles.qButton,
                         ),
                       ),
                     ),
@@ -69,7 +69,7 @@ class SkillsState extends State<Skills> {
                       child: IconQButton(
                         icon: Icons.expand_more_rounded,
                         text: 'Expand all',
-                        textStyle: TextStyles.qButtonMid,
+                        textStyle: TextStyles.qButton,
                         qStyle: QStyles.input,
                         onPressed: () {
                           for (var data in widget.data['list']) {
@@ -99,7 +99,7 @@ class SkillsState extends State<Skills> {
                           },
                           text: data['skill'],
                           icon: Icons.expand_less_rounded,
-                          textStyle: TextStyles.qButtonMid,
+                          textStyle: TextStyles.qButton,
                         ),
                         SizedBox(height: widget.width / 96),
                         Container(

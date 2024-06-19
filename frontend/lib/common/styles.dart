@@ -25,7 +25,7 @@ class TextStyles {
   );
 
   static TextStyle name = GoogleFonts.comfortaa(
-    fontSize: 48,
+    fontSize: 36,
     fontWeight: FontWeight.w700,
     color: Colours.cvWhite,
   );
@@ -55,7 +55,7 @@ class TextStyles {
   );
 
   static TextStyle message = GoogleFonts.comfortaa(
-    fontSize: 16,
+    fontSize: 14,
     fontWeight: FontWeight.w500,
     color: Colours.cvWhite,
   );

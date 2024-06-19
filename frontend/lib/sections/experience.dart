@@ -13,7 +13,7 @@ class Experience extends StatefulWidget {
   final Map<String, dynamic> data;
 
   const Experience({
-    super.key, 
+    super.key,
     required this.width,
     required this.data,
   });
@@ -52,14 +52,17 @@ class ExperienceState extends State<Experience> {
                         QuarticleContainer(
                           style: QStyles.mahogany,
                           child: Column(
-                            children:[
+                            children: [
                               Padding(
                                 padding: const EdgeInsets.all(6),
                                 child: QuarticleContainer(
-                                  style: notifier.isHighlighted(data['cID']) ? QStyles.input : QStyles.cyan,
+                                  style: notifier.isHighlighted(data['cID'])
+                                      ? QStyles.input
+                                      : QStyles.cyan,
                                   child: Text(
                                     data['header'],
-                                    style: TextStyles.qButtonMid.copyWith(fontSize: 24),
+                                    style: TextStyles.qButtonMid
+                                        .copyWith(fontSize: 24),
                                   ),
                                 ),
                               ),
@@ -74,41 +77,41 @@ class ExperienceState extends State<Experience> {
                                 ),
                               ),
                               for (var i = 0; i < data['jobs'].length; i++)
-                              Row(
-                                mainAxisAlignment: MainAxisAlignment.center,
-                                mainAxisSize: MainAxisSize.min,
-                                children: [
-                                  Padding(
-                                    padding: const EdgeInsets.all(6),
-                                    child: QuarticleContainer(
-                                      style: QStyles.dark,
-                                      child: Text(
-                                        data['jobs'][i]['title'],
-                                        style: TextStyles.qButton,
+                                Wrap(
+                                  alignment: WrapAlignment.center,
+                                  children: [
+                                    Padding(
+                                      padding: const EdgeInsets.all(6),
+                                      child: QuarticleContainer(
+                                        style: QStyles.dark,
+                                        child: Text(
+                                          data['jobs'][i]['title'],
+                                          style: TextStyles.qButton,
+                                        ),
                                       ),
                                     ),
-                                  ),
-                                  Padding(
-                                    padding: const EdgeInsets.all(6),
-                                    child: QuarticleContainer(
-                                      style: QStyles.dark,
-                                      child: Text(
-                                        data['jobs'][i]['dates'],
-                                        style: TextStyles.qButton,
+                                    Padding(
+                                      padding: const EdgeInsets.all(6),
+                                      child: QuarticleContainer(
+                                        style: QStyles.dark,
+                                        child: Text(
+                                          data['jobs'][i]['dates'],
+                                          style: TextStyles.qButton,
+                                        ),
                                       ),
                                     ),
-                                  ),
-                                ],
-                              ),
-                              if (data['description'] != null && data['description'].isNotEmpty)
-                              Padding(
-                                padding: const EdgeInsets.all(6),
-                                child: ListExpandButton(
-                                  listData: data['description'],
-                                  width: widget.width,
-                                  text: 'Show description',
+                                  ],
                                 ),
-                              ),
+                              if (data['description'] != null &&
+                                  data['description'].isNotEmpty)
+                                Padding(
+                                  padding: const EdgeInsets.all(6),
+                                  child: ListExpandButton(
+                                    listData: data['description'],
+                                    width: widget.width,
+                                    text: 'Show description',
+                                  ),
+                                ),
                             ],
                           ),
                         ),

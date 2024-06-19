@@ -58,7 +58,9 @@ class TopBarState extends State<TopBar> {
             alignment: Alignment.centerLeft,
             child: IconQButton(
               icon: Icons.code_rounded,
-              text: 'my source code',
+              text: MediaQuery.of(context).size.width < 800
+                  ? ''
+                  : 'my source code',
               textStyle: TextStyles.qButton,
               qStyle: QStyles.label,
               onPressed: widget.cred,
@@ -76,7 +78,9 @@ class TopBarState extends State<TopBar> {
               children: [
                 IconQButton(
                   icon: Icons.download_rounded,
-                  text: 'download PDF',
+                  text: MediaQuery.of(context).size.width < 600
+                      ? ''
+                      : 'download PDF',
                   textStyle: TextStyles.qButton,
                   qStyle: QStyles.label,
                   onPressed: () async {
@@ -97,7 +101,7 @@ class TopBarState extends State<TopBar> {
                 const SizedBox(width: 24),
                 IconQButton(
                   icon: Icons.share_rounded,
-                  text: 'share',
+                  text: MediaQuery.of(context).size.width < 800 ? '' : 'share',
                   textStyle: TextStyles.qButton,
                   qStyle: QStyles.label,
                   onPressed: () {

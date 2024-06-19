@@ -80,8 +80,10 @@ class CVState extends State<CV> {
     double width = MediaQuery.of(context).orientation == Orientation.portrait
         ? MediaQuery.of(context).size.width
         : MediaQuery.of(context).size.height;
+    double fullWidth = MediaQuery.of(context).size.width;
 
     return MaterialApp(
+      title: 'Dan Hartas - Smart CV',
       home: DefaultTextStyle(
         style: TextStyles.qButton,
         child: data == null
@@ -100,6 +102,7 @@ class CVState extends State<CV> {
                                 child: SingleChildScrollView(
                                   child: Content(
                                     width: width,
+                                    fullWidth: fullWidth,
                                     data: data!,
                                     sessionId: sessionId,
                                     collapsibleParents: collapsibleParents,

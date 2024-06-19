@@ -17,9 +17,11 @@ class Content extends StatefulWidget {
   final Map<String, dynamic> data;
   final String sessionId;
   final Map<int, List<int>> collapsibleParents;
+  final double fullWidth;
 
   const Content({
     super.key,
+    required this.fullWidth,
     required this.width,
     required this.data,
     required this.sessionId,
@@ -33,10 +35,10 @@ class Content extends StatefulWidget {
 class ContentState extends State<Content> {
   @override
   Widget build(BuildContext context) {
-    double spacer = widget.width / 72;
+    double spacer = 12;
     return Column(
       children: [
-        SizedBox(height: spacer),
+        SizedBox(height: spacer, width: widget.fullWidth),
         Headline(width: widget.width, data: widget.data['header']),
         SizedBox(height: spacer),
         MainTray(width: widget.width, data: widget.data),

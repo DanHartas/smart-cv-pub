@@ -54,7 +54,7 @@ class GetInTouchState extends State<GetInTouch> {
                   child: IconQButton(
                     icon: Icons.email_rounded,
                     text: widget.data['email'],
-                    textStyle: TextStyles.qButtonMid,
+                    textStyle: TextStyles.qButton,
                     qStyle: QStyles.turquoise,
                     onPressed: () =>
                         externalLink('mailto:${widget.data['email']}'),
@@ -65,7 +65,7 @@ class GetInTouchState extends State<GetInTouch> {
                   child: IconQButton(
                     icon: Icons.phone_rounded,
                     text: widget.data['phone'],
-                    textStyle: TextStyles.qButtonMid,
+                    textStyle: TextStyles.qButton,
                     qStyle: QStyles.turquoise,
                     onPressed: () =>
                         externalLink('tel:${widget.data['phone']}'),
@@ -76,7 +76,7 @@ class GetInTouchState extends State<GetInTouch> {
                   child: IconQButton(
                     icon: Icons.location_on_rounded,
                     text: widget.data['address'],
-                    textStyle: TextStyles.qButtonMid,
+                    textStyle: TextStyles.qButton,
                     qStyle: QStyles.turquoise,
                     onPressed: () => externalLink(
                         'https://www.google.com/maps/search/?api=1&query=${widget.data['address']}'),
@@ -87,7 +87,7 @@ class GetInTouchState extends State<GetInTouch> {
                   child: IconQButton(
                     icon: Icons.web_rounded,
                     text: widget.data['linkedin'],
-                    textStyle: TextStyles.qButtonMid,
+                    textStyle: TextStyles.qButton,
                     qStyle: QStyles.turquoise,
                     onPressed: () => externalLink(widget.data['linkedin']),
                   ),

@@ -39,7 +39,7 @@ class ChatBotState extends State<ChatBot> {
   void initState() {
     super.initState();
     messages.add(BotMessage(
-      width: widget.width * 2 / 3,
+      width: widget.width,
       text: widget.data['opening message'],
       cIDs: const [],
       collapsibleParents: widget.collapsibleParents,
@@ -52,9 +52,9 @@ class ChatBotState extends State<ChatBot> {
         'https://dh-smart-cv-backend-fa1514ad8fd4.herokuapp.com/sendMessage');
 
     setState(() {
-      messages.add(UserMessage(text: message, width: widget.width * 2 / 3));
+      messages.add(UserMessage(text: message, width: widget.width));
       _controller.clear();
-      messages.add(LoadingMessage(width: widget.width * 2 / 3));
+      messages.add(LoadingMessage(width: widget.width));
     });
 
     var response = await http.post(
@@ -72,7 +72,7 @@ class ChatBotState extends State<ChatBot> {
       setState(() {
         messages.removeLast();
         messages.add(BotMessage(
-          width: widget.width * 2 / 3,
+          width: widget.width,
           text: data['message'],
           cIDs: cIDs,
           collapsibleParents: widget.collapsibleParents,
@@ -83,9 +83,7 @@ class ChatBotState extends State<ChatBot> {
 
   @override
   Widget build(BuildContext context) {
-    double threadWidth = widget.width * 2 / 3;
     return SizedBox(
-      width: threadWidth,
       child: Column(
         mainAxisAlignment: MainAxisAlignment.start,
         mainAxisSize: MainAxisSize.min,
@@ -104,7 +102,7 @@ class ChatBotState extends State<ChatBot> {
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
               SizedBox(
-                width: threadWidth - 110,
+                width: widget.width - 72,
                 child: QuarticleContainer(
                   style: QStyles.input,
                   child: TextField(
